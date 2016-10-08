@@ -2,7 +2,8 @@ var canvas, canvasContext;
 
 var squareX = randomNumber();
 var squareY = 0;
-
+var squareXspeed = 3;
+// var start = document.getElementById("start").addEventListener("click", updateAll)
 
 window.onload = function () {
   canvas = document.getElementById("myCanvas");
@@ -13,8 +14,17 @@ window.onload = function () {
 }
 
 function updateAll() {
-  squareX++;
-  squareY++;
+  squareX += squareXspeed;
+  squareY++
+
+  if(squareX > 650) {
+    squareXspeed *= -1
+  }
+
+  if(squareX < 0) {
+    squareXspeed *= -1
+  }
+
   canvasContext.fillStyle = "black"
   canvasContext.fillRect(0, 0, canvas.width, canvas.height);
 
