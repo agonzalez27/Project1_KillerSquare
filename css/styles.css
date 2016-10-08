@@ -11,6 +11,10 @@ body {
   background-color: white;
 }
 
+#myCanvas {
+  background-color: black;
+}
+
 #titleDiv {
   height: 100px;
   width: 700px;

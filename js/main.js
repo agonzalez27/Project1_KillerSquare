@@ -3,9 +3,9 @@ var canvas, canvasContext;
 var squareX = randomNumber();
 var squareY = 0;
 var squareXspeed = 3;
-// var start = document.getElementById("start").addEventListener("click", updateAll)
+var start = document.getElementById("start").addEventListener("click", startGame)
 
-window.onload = function () {
+function startGame() {
   canvas = document.getElementById("myCanvas");
   canvasContext = canvas.getContext("2d");
 
