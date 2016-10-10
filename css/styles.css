@@ -53,12 +53,12 @@ body {
   width: 100px;
   border: 2px solid black;
   display: inline-block;
-  font-size: 20px;
+  font-size: 25px;
   margin-left: 100px;
   margin-top: 20px;
   margin-right: 100px;
-  color: black;
-  background-color: white;
+  color: yellow;
+  background-color: black;
 }
 
 #level {
@@ -68,5 +68,5 @@ body {
   display: inline-block;
   color: yellow;
   background-color: black;
-  font-size: 20px;
+  font-size: 20spx;
 }

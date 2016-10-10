@@ -3,6 +3,7 @@ var canvas, canvasContext;
 var squareX = randomNumber();
 var squareY = 0;
 var squareXspeed = 3;
+var squareYspeed = 1;
 var start = $("#start").on("click", startGame);
 var score = 0;
 var canvas = $("#myCanvas");
@@ -23,18 +24,17 @@ canvas.on("click", function(e) {
     squareX = randomNumber();
     squareY = squareY = 0;
     squareXspeed = squareXspeed *1.5;
+    squareYspeed = squareYspeed *1.2;
   }
+
 })
-
-
-
 
 var interval;
 
 //creates animation by updating canvas 30 times a second.
 function startGame() {
     interval = setInterval(updateAll, 30);
-
+    $("#start").off();
 }
 
 function updateAll() {
@@ -43,7 +43,8 @@ function updateAll() {
   drawSquare();
   if(squareY > 450) {
     clearInterval(interval);
-    alert("Game Over")
+    alert("Game Over");
+    canvas.off();
   }
 }
 
@@ -56,7 +57,7 @@ function drawCanvas() {
 //draws killer square and sets speed
 function drawSquare() {
   squareX += squareXspeed;
-  squareY++
+  squareY += squareYspeed;
 
   if(squareX > 650) {
     squareXspeed *= -1
