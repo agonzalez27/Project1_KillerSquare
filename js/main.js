@@ -19,9 +19,10 @@ canvas.on("click", function(e) {
   }
 })
 
-//creates animation by updating canvas 30 times a second.
+
 var interval;
 
+//creates animation by updating canvas 30 times a second.
 function startGame() {
     interval = setInterval(updateAll, 30);
 
