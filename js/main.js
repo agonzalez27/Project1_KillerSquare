@@ -4,9 +4,10 @@ var squareX = randomNumber();
 var squareY = 0;
 var squareXspeed = 3;
 var start = $("#start").on("click", startGame);
-var score = 0
+var score = 0;
 var canvas = $("#myCanvas");
 var canvasContext = canvas[0].getContext("2d");
+var level = 1;
 
 canvas.on("click", function(e) {
   var clickX = e.pageX - canvas[0].offsetLeft
@@ -16,8 +17,16 @@ canvas.on("click", function(e) {
     score = score + 50;
     console.log(score);
     $("#score").html("Score: " + score);
+    level = level +1;
+    $("#level").html("Level: " + level);
+    console.log(level)
+    squareX = randomNumber();
+    squareY = squareY = 0;
+    squareXspeed = squareXspeed *1.5;
   }
 })
+
+
 
 
 var interval;
