@@ -10,8 +10,9 @@ body {
   text-align: center;
   background-color: white;
 }
+
 #myCanvas {
-  background: black;
+  background-color: black;
 }
 
 #titleDiv {
