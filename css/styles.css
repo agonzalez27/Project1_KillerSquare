@@ -43,8 +43,8 @@ body {
   width: 100px;
   border: 2px solid black;
   display: inline-block;
-  color: black;
-  background-color: white;
+  color: yellow;
+  background-color: black;
   font-size: 20px;
 }
 
