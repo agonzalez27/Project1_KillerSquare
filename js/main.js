@@ -20,20 +20,21 @@ canvas.on("click", function(e) {
 })
 
 //creates animation by updating canvas 30 times a second.
-function startGame() {
-  setInterval(updateAll, 30);
-}
+var interval;
 
-function stopGame() {
-  if(squareY > 400) {
-    clearInterval(updateAll)
-  }
+function startGame() {
+    interval = setInterval(updateAll, 30);
+
 }
 
 function updateAll() {
 
   drawCanvas();
   drawSquare();
+  if(squareY > 450) {
+    clearInterval(interval);
+    alert("Game Over")
+  }
 }
 
 //draws canvas
