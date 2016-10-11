@@ -13,7 +13,7 @@ var level = 1;
 canvas.on("click", function(e) {
   var clickX = e.pageX - canvas[0].offsetLeft
   var clickY = e.pageY - canvas[0].offsetTop
-  if(clickX >= squareX && clickX <= squareX+50 && clickY >= squareY && clickY <= squareY+50) {
+  if(clickX >= squareX && clickX <= squareX+100 && clickY >= squareY && clickY <= squareY+100) {
     console.log("You scored 50 points");
     score = score + 50;
     console.log(score);
@@ -50,7 +50,7 @@ function updateAll() {
 
 //draws canvas
 function drawCanvas() {
-  canvasContext.fillStyle = "black"
+  canvasContext.fillStyle = "black";
   canvasContext.fillRect(0, 0, canvas[0].width, canvas[0].height);
 }
 
@@ -67,12 +67,12 @@ function drawSquare() {
     squareXspeed *= -1
   }
 
-  canvasContext.fillStyle = "red";
-  canvasContext.beginPath();
-  canvasContext.fillRect(squareX, squareY, 50, 50)
+var tie = new Image();
+tie.src = "Assets/TieFighterEdited.png";
+canvasContext.drawImage(tie, squareX, squareY, 100, 100);
 }
 
 //creates a random number between 1 and 650 and is plugged into squareX
 function randomNumber() {
-return Math.floor((Math.random() * 650) + 1);
+  return Math.floor((Math.random() * 650) + 1);
 }

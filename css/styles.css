@@ -1,72 +1,68 @@
 body {
-  background-color: black;
+  background-image: url(StarWars_Background.jpg);
+  background-size: cover;
 }
 
 #main {
   margin: 0 auto;
   height: 800px;
   width: 900px;
-  border: 2px solid black;
   text-align: center;
-  background-color: white;
 }
 
 #myCanvas {
-  background-color: black;
+  background-color: rgba(0,0,0,0.5);
 }
 
 #titleDiv {
   height: 100px;
   width: 700px;
-  border: 2px solid black;
   font-size: 80px;
   text-align: center;
   display: inline-block;
   margin-bottom: 10px;
   margin-top: 30px;
-  color: yellow;
-  background-color: black;
+  background-color: rgba(0,0,0,0.5);
 }
+
+#titleDivTitle {
+  height: 70px;
+  width: 600px;
+}
+
 
 #footerDiv {
   height: 100px;
   width: 700px;
-  border: 2px solid black;
   text-align: center;
   display: inline-block;
   margin-top: 10px;
-  background-color: black;
+  background-color: rgba(0,0,0,0.5);
 }
 
 #score {
   height: 50px;
   width: 100px;
-  border: 2px solid black;
   display: inline-block;
   color: yellow;
-  background-color: black;
   font-size: 20px;
 }
 
 #start {
   height: 50px;
   width: 100px;
-  border: 2px solid black;
   display: inline-block;
   font-size: 25px;
   margin-left: 100px;
   margin-top: 20px;
   margin-right: 100px;
   color: yellow;
-  background-color: black;
 }
 
 #level {
   height: 50px;
   width: 100px;
-  border: 2px solid black;
   display: inline-block;
   color: yellow;
-  background-color: black;
-  font-size: 20spx;
+  font-size: 20px;
 }
