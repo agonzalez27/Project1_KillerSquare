@@ -9,6 +9,7 @@ var score = 0;
 var canvas = $("#myCanvas");
 var canvasContext = canvas[0].getContext("2d");
 var level = 1;
+var titleDiv = $("#titleDiv");
 
 canvas.on("click", function(e) {
   var clickX = e.pageX - canvas[0].offsetLeft
@@ -43,8 +44,14 @@ function updateAll() {
   drawSquare();
   if(squareY > 450) {
     clearInterval(interval);
-    alert("Game Over");
+    $("#titleDiv").html("GAME OVER");
     canvas.off();
+  } else {
+    if(score == 450) {
+      clearInterval(interval);
+      $("#titleDiv").html("You Win!");
+      canvas.off();
+    }
   }
 }
 
