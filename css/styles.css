@@ -12,6 +12,7 @@ body {
 
 #myCanvas {
   background-color: rgba(0,0,0,0.5);
+  cursor: url(crosshairs.png) 65 65, auto;
 }
 
 #titleDiv {
@@ -29,6 +30,14 @@ body {
 #titleDivTitle {
   height: 70px;
   width: 600px;
+}
+
+#instructions {
+  height: 50px;
+  width: 700px;
+  font-size: 20px;
+  color: yellow;
+  background-color: rgba(0,0,0,0.5);
 }
 
 

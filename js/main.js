@@ -66,7 +66,7 @@ function drawSquare() {
   squareX += squareXspeed;
   squareY += squareYspeed;
 
-  if(squareX > 650) {
+  if(squareX > 620) {
     squareXspeed *= -1
   }
 
@@ -81,5 +81,5 @@ canvasContext.drawImage(tie, squareX, squareY, 100, 100);
 
 //creates a random number between 1 and 650 and is plugged into squareX
 function randomNumber() {
-  return Math.floor((Math.random() * 650) + 1);
+  return Math.floor((Math.random() * 620) + 1);
 }
