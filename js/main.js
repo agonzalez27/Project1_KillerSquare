@@ -95,12 +95,6 @@ function randomNumber() {
   return Math.floor((Math.random() * 620) + 1);
 }
 
-// function starYrandom() {
-//     return Math.floor((Math.random() * 500) + 1);
-// }
-
-// starsX = [222,380,313,25,367,439,165,39,589,158,5,244,423,51,479,538,139,206,355,602,29,299,290,415,658];
-
 starsX = [];
 
 function makeStarsX() {
@@ -127,6 +121,5 @@ function drawStars() {
     canvasContext.arc(starsX[i], starsY[i], 1, 0, 2*Math.PI);
     canvasContext.fillStyle = "white";
     canvasContext.fill();
-
   }
 }
