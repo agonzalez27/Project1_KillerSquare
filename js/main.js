@@ -18,7 +18,7 @@ var level = 1;
 var titleDiv = $("#titleDiv");
 var footerDiv = $("#footerDiv");
 var highScoreDiv = $("#highScoreDiv");
-var highScore = [];
+var highScore = [0];
 
 canvas.on("click", function(e) {
   clickX = e.pageX - canvas[0].offsetLeft
@@ -57,7 +57,8 @@ function updateAll() {
     footerDiv.html("RESTART")
     highScore.push(score);
     canvas.off();
-    highScoreDiv.html(highScore1())
+    console.log('about to call high score 1');
+    highScore1();
   }
   // // win logic
   // else {
@@ -148,8 +149,8 @@ function drawStars() {
 }
 
 function highScore1() {
-  for(var i = 0; i >= highScore.length; i++) {
-    return "Game " + i + " " + "Score " + [i]
+  for(var i = 1; i < highScore.length; i++) {
+     $('#highScoreUl').append("<li>Game " + i + " " + "Score " + highScore[i] + "</li>");
   }
   console.log(highScore)
 }
