@@ -55,8 +55,9 @@ function updateAll() {
     startDiv.html('<div id="startDiv"><button id="RESTART">RESTART</button><div>');
     $('#RESTART').on("click", restartGame);
     highScore.push(score);
+    var j = highScore.length - 1;
     console.log('about to call high score 1');
-    highScore1();
+    highScore1(j);
   }
 }
 
@@ -123,11 +124,8 @@ function drawStars() {
 }
 
 //prints high score in to high score div
-function highScore1() {
-  for(var i = 1; i < highScore.length; i++) {
-     $('#highScoreUl').append("<li>Game: " + i + " " + "Score: " + highScore[i] + "</li>");
-  }
-  console.log(highScore)
+function highScore1(j) {
+    return $('#highScoreUl').append("<li>Game Number: " + j + " " + "Score: " + highScore[j] + "</li>");
 }
 
 function restartGame() {
