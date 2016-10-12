@@ -4,6 +4,8 @@ var squareX = randomNumber();
 var squareY = 0;
 var squareXspeed = 3;
 var squareYspeed = 1;
+var clickX;
+var clickY;
 var laserX = 350;
 var laserY = 500;
 var laserXspeed = 3;
@@ -14,10 +16,13 @@ var canvas = $("#myCanvas");
 var canvasContext = canvas[0].getContext("2d");
 var level = 1;
 var titleDiv = $("#titleDiv");
+var footerDiv = $("#footerDiv");
+var highScoreDiv = $("#highScoreDiv");
+var highScore = [];
 
 canvas.on("click", function(e) {
-  var clickX = e.pageX - canvas[0].offsetLeft
-  var clickY = e.pageY - canvas[0].offsetTop
+  clickX = e.pageX - canvas[0].offsetLeft
+  clickY = e.pageY - canvas[0].offsetTop
   if(clickX >= squareX && clickX <= squareX+100 && clickY >= squareY && clickY <= squareY+100) {
     console.log("You scored 50 points");
     score = score + 50;
@@ -31,17 +36,6 @@ canvas.on("click", function(e) {
     squareXspeed = squareXspeed *1.5;
     squareYspeed = squareYspeed *1.2;
   }
-  function shoot() {
-    console.log("Shoot function is being called")
-    canvasContext.beginPath();
-    canvasContext.moveTo(210, 500);
-    canvasContext.lineTo(clickX, clickY);
-    canvasContext.fillStyle = "blue";
-    canvasContext.lineWidth = 20;
-    canvasContext.fill();
-  }
-
-  shoot();
 
 })
 
@@ -59,15 +53,21 @@ function updateAll() {
   drawSquare();
   if(squareY > 450) {
     clearInterval(interval);
-    $("#titleDiv").html("GAME OVER");
+    titleDiv.html("GAME OVER");
+    footerDiv.html("RESTART")
+    highScore.push(score);
     canvas.off();
-  } else {
-    if(score == 450) {
-      clearInterval(interval);
-      $("#titleDiv").html("You Win!");
-      canvas.off();
-    }
+    highScoreDiv.html(highScore1())
   }
+  // // win logic
+  // else {
+  // // //   if(score == 450) {
+  // // //     clearInterval(interval);
+  // // //     $("#titleDiv").html("You Win!");
+  // // //     canvas.off();
+  // // //   }
+  // // }
+  // drawLaser();
 }
 
 //draws canvas
@@ -98,17 +98,19 @@ canvasContext.drawImage(tie, squareX, squareY, 100, 100);
 //   laserX += laserXspeed;
 //   laserY += laserYspeed;
 //
-//   if(squareX > 620) {
-//     squareXspeed *= -1
-//   }
+//   // if(squareX > 620) {
+//   //   squareXspeed *= -1
+//   // }
+//   //
+//   // if(squareX < 0) {
+//   //   squareXspeed *= -1
+//   // }
 //
-//   if(squareX < 0) {
-//     squareXspeed *= -1
-//   }
+//   canvasContext.beginPath();
+//   canvasContext.fillRect(laserX, laserY, 25, 100)
+//   canvasContext.fillStyle = "red";
 //
-// var tie = new Image();
-// tie.src = "Assets/TieFighterEdited.png";
-// canvasContext.drawImage(tie, squareX, squareY, 100, 100);
+//
 // }
 
 //creates a random number between 1 and 650 and is plugged into squareX
@@ -143,4 +145,11 @@ function drawStars() {
     canvasContext.fillStyle = "white";
     canvasContext.fill();
   }
+}
+
+function highScore1() {
+  for(var i = 0; i >= highScore.length; i++) {
+    return "Game " + i + " " + "Score " + [i]
+  }
+  console.log(highScore)
 }

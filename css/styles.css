@@ -46,8 +46,15 @@ body {
   width: 700px;
   text-align: center;
   display: inline-block;
-  margin-top: 10px;
+  margin-top: 20px;
   background-color: rgba(0,0,0,0.5);
+  font-size: 80px;
+  color: yellow;
+  margin-right: 80px;
+  position: absolute;
+  bottom: 0;
+  left: 25%;
+
 }
 
 #score {
@@ -75,4 +82,14 @@ body {
   display: inline-block;
   color: yellow;
   font-size: 20px;
+}
+
+#highScoreDiv {
+  height: 400px;
+  width: 200px;
+  float: right;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.5);
+  margin-top: 175px;
+  margin-right: 90px;
 }
