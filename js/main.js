@@ -55,6 +55,9 @@ function updateAll() {
     clearInterval(interval);
     titleDiv.html("GAME OVER");
     footerDiv.html("RESTART")
+    footerDiv.on("click", function() {
+      console.log("You clicked restart")
+    })
     highScore.push(score);
     canvas.off();
     console.log('about to call high score 1');
@@ -150,7 +153,7 @@ function drawStars() {
 
 function highScore1() {
   for(var i = 1; i < highScore.length; i++) {
-     $('#highScoreUl').append("<li>Game " + i + " " + "Score " + highScore[i] + "</li>");
+     $('#highScoreUl').append("<li>Game: " + i + " " + "Score: " + highScore[i] + "</li>");
   }
   console.log(highScore)
 }
