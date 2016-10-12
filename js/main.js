@@ -4,6 +4,10 @@ var squareX = randomNumber();
 var squareY = 0;
 var squareXspeed = 3;
 var squareYspeed = 1;
+var laserX = 350;
+var laserY = 500;
+var laserXspeed = 3;
+var laserYspeed = 1;
 var start = $("#start").on("click", startGame);
 var score = 0;
 var canvas = $("#myCanvas");
@@ -89,6 +93,23 @@ var tie = new Image();
 tie.src = "Assets/TieFighterEdited.png";
 canvasContext.drawImage(tie, squareX, squareY, 100, 100);
 }
+
+// function drawLaser() {
+//   laserX += laserXspeed;
+//   laserY += laserYspeed;
+//
+//   if(squareX > 620) {
+//     squareXspeed *= -1
+//   }
+//
+//   if(squareX < 0) {
+//     squareXspeed *= -1
+//   }
+//
+// var tie = new Image();
+// tie.src = "Assets/TieFighterEdited.png";
+// canvasContext.drawImage(tie, squareX, squareY, 100, 100);
+// }
 
 //creates a random number between 1 and 650 and is plugged into squareX
 function randomNumber() {
