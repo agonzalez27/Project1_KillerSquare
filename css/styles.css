@@ -38,6 +38,8 @@ body {
   font-size: 20px;
   color: yellow;
   background-color: rgba(0,0,0,0.5);
+  border: 2px solid blue;
+  display: inline-block;
 }
 
 
@@ -53,7 +55,8 @@ body {
   margin-right: 80px;
   position: absolute;
   bottom: 0;
-  left: 18%;
+  left: 28%;
+  border: 2px solid blue;
 
 }
 
@@ -63,17 +66,12 @@ body {
   display: inline-block;
   color: yellow;
   font-size: 20px;
+  border: 2px solid blue;
+  margin-right: 50px;
 }
 
 #start {
-  height: 50px;
-  width: 100px;
-  display: inline-block;
-  font-size: 30px;
-  margin-left: 100px;
-  margin-top: 20px;
-  margin-right: 100px;
-  color: yellow;
+
 }
 
 #level {
@@ -82,6 +80,8 @@ body {
   display: inline-block;
   color: yellow;
   font-size: 20px;
+  border: 2px solid blue;
+  margin-left: 50px;
 }
 
 #highScoreDiv {
@@ -91,8 +91,15 @@ body {
   overflow: auto;
   background-color: rgba(0,0,0,0.5);
   margin-top: 175px;
-  margin-right: 90px;
+  margin-right: 250px;
   color: yellow;
   font-size: 20px;
   list-style-type: none;
+}
+
+#startDiv {
+  height: 60px;
+  width: 105px;
+  border: 2px solid blue;
+  display: inline-block;
 }

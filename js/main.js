@@ -6,10 +6,6 @@ var squareXspeed = 3;
 var squareYspeed = 1;
 var clickX;
 var clickY;
-var laserX = 350;
-var laserY = 500;
-var laserXspeed = 3;
-var laserYspeed = 1;
 var start = $("#start").on("click", startGame);
 var score = 0;
 var canvas = $("#myCanvas");
@@ -17,9 +13,12 @@ var canvasContext = canvas[0].getContext("2d");
 var level = 1;
 var titleDiv = $("#titleDiv");
 var footerDiv = $("#footerDiv");
+var startDiv = $("#startDiv");
 var highScoreDiv = $("#highScoreDiv");
 var highScore = [0];
+var interval;
 
+//this is the event listner for the shooting clicks on the page
 canvas.on("click", function(e) {
   clickX = e.pageX - canvas[0].offsetLeft
   clickY = e.pageY - canvas[0].offsetTop
@@ -32,14 +31,12 @@ canvas.on("click", function(e) {
     $("#level").html("Level: " + level);
     console.log(level)
     squareX = randomNumber();
-    squareY = squareY = 0;
+    squareY = 0;
     squareXspeed = squareXspeed *1.5;
     squareYspeed = squareYspeed *1.2;
   }
-
+  whatIsSquareY();
 })
-
-var interval;
 
 //creates animation by updating canvas 30 times a second.
 function startGame() {
@@ -47,6 +44,7 @@ function startGame() {
     $("#start").off();
 }
 
+//calls functions that draw various elements and ends game when TIE figher hits the botom of the page
 function updateAll() {
   drawCanvas();
   drawStars();
@@ -54,24 +52,12 @@ function updateAll() {
   if(squareY > 450) {
     clearInterval(interval);
     titleDiv.html("GAME OVER");
-    footerDiv.html("RESTART")
-    footerDiv.on("click", function() {
-      console.log("You clicked restart")
-    })
+    startDiv.html('<div id="startDiv"><button id="RESTART">RESTART</button><div>');
+    $('#RESTART').on("click", restartGame);
     highScore.push(score);
-    canvas.off();
     console.log('about to call high score 1');
     highScore1();
   }
-  // // win logic
-  // else {
-  // // //   if(score == 450) {
-  // // //     clearInterval(interval);
-  // // //     $("#titleDiv").html("You Win!");
-  // // //     canvas.off();
-  // // //   }
-  // // }
-  // drawLaser();
 }
 
 //draws canvas
@@ -98,30 +84,13 @@ tie.src = "Assets/TieFighterEdited.png";
 canvasContext.drawImage(tie, squareX, squareY, 100, 100);
 }
 
-// function drawLaser() {
-//   laserX += laserXspeed;
-//   laserY += laserYspeed;
-//
-//   // if(squareX > 620) {
-//   //   squareXspeed *= -1
-//   // }
-//   //
-//   // if(squareX < 0) {
-//   //   squareXspeed *= -1
-//   // }
-//
-//   canvasContext.beginPath();
-//   canvasContext.fillRect(laserX, laserY, 25, 100)
-//   canvasContext.fillStyle = "red";
-//
-//
-// }
 
 //creates a random number between 1 and 650 and is plugged into squareX
 function randomNumber() {
   return Math.floor((Math.random() * 620) + 1);
 }
 
+//star random position on the x-axis
 starsX = [];
 
 function makeStarsX() {
@@ -132,6 +101,7 @@ function makeStarsX() {
 
 makeStarsX();
 
+//star random position on the y-axis
 starsY = [];
 
 function makeStarsY() {
@@ -142,6 +112,7 @@ function makeStarsY() {
 
 makeStarsY();
 
+//draw 200 randomly placed stars
 function drawStars() {
   for(var i = 1; i < 200; i++) {
     canvasContext.beginPath();
@@ -151,9 +122,26 @@ function drawStars() {
   }
 }
 
+//prints high score in to high score div
 function highScore1() {
   for(var i = 1; i < highScore.length; i++) {
      $('#highScoreUl').append("<li>Game: " + i + " " + "Score: " + highScore[i] + "</li>");
   }
   console.log(highScore)
+}
+
+function restartGame() {
+  score = 0;
+  level = 1;
+  squareY = 0;
+  squareX = randomNumber();
+  squareXspeed = 3;
+  squareYspeed = 1;
+  titleDiv.html('<img id="titleDivTitle" src="css/tFighterD.png">');
+  $('#RESTART').off();
+  startGame();
+}
+
+function whatIsSquareY() {
+  console.log("this is squareY Y " + squareY);
 }
