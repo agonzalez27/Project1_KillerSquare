@@ -20,11 +20,14 @@ var interval;
 var audioIntro = new Audio("./Assets/MainStarWars.mp3")
 audioIntro.play();
 var audioPlay = new Audio("./Assets/ImperialAttack.mp3")
+var blaster = new Audio("./Assets/blaster.mp3")
+var laserCounter = 0
 
 //this is the event listner for the shooting clicks on the page
 canvas.on("click", function(e) {
   clickX = e.pageX - canvas[0].offsetLeft
   clickY = e.pageY - canvas[0].offsetTop
+  laserCounter = 6
   if(clickX >= squareX && clickX <= squareX+100 && clickY >= squareY && clickY <= squareY+100) {
     score = score + 50;
     $("#score").html("Score: " + score);
@@ -35,6 +38,7 @@ canvas.on("click", function(e) {
     squareXspeed = squareXspeed *1.5;
     squareYspeed = squareYspeed *1.2;
   }
+    blaster.play();
 })
 
 //creates animation by updating canvas 30 times a second.
@@ -59,6 +63,8 @@ function updateAll() {
     var j = highScore.length - 1;
     highScore1(j);
   }
+  fireLaser1();
+  fireLaser2();
 }
 
 //draws canvas
@@ -138,4 +144,23 @@ function restartGame() {
   titleDiv.html('<img id="titleDivTitle" src="Assets/tFighterD.png">');
   $('#RESTART').off();
   startGame();
+}
+
+function fireLaser1() {
+  canvasContext.beginPath();
+  canvasContext.moveTo(0, 500);
+  canvasContext.lineTo(clickX, clickY);
+  canvasContext.strokeStyle = "rgba(0,0,255,."+laserCounter+")";
+  canvasContext.lineWidth = 5;
+  canvasContext.stroke();
+  laserCounter--
+}
+
+function fireLaser2() {
+  canvasContext.beginPath();
+  canvasContext.moveTo(700, 500);
+  canvasContext.lineTo(clickX, clickY);
+  canvasContext.strokeStyle = "rgba(0,0,255,."+laserCounter+")";
+  canvasContext.lineWidth = 5;
+  canvasContext.stroke();
 }
