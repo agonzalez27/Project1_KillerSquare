@@ -83,7 +83,7 @@ body {
 
 #highScoreDiv {
   height: 400px;
-  width: 200px;
+  width: 400px;
   float: right;
   overflow: auto;
   background-color: rgba(0,0,0,0.5);

@@ -125,7 +125,7 @@ function drawStars() {
 
 //prints high score in to high score div
 function highScore1(j) {
-    return $('#highScoreUl').append("<li>Game Number: " + j + " " + "Score: " + highScore[j] + "</li>");
+    return $('#highScoreUl').append("<li>Game: " + j + "  " + "Level: " + level + "  " + "Score: " + highScore[j] + "</li>");
 }
 
 function restartGame() {
