@@ -61,7 +61,6 @@ function updateAll() {
     $('#RESTART').on("click", restartGame);
     highScore.push(score);
     var j = highScore.length - 1;
-    console.log('about to call high score 1');
     highScore1(j);
   }
 }

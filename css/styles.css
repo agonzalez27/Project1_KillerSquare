@@ -1,5 +1,5 @@
 body {
-  background-image: url(StarWars_Background.jpg);
+  background-image: url(../Assets/StarWars_Background.jpg);
   background-size: cover;
   text-align: center;
   display: inline-block;
@@ -8,19 +8,18 @@ body {
 #container {
   height: 900px;
   width: 800px;
-  border: 2px solid blue;
 }
 
 #container1 {
   height: 1000px;
   width: 1300px;
-  border: 2px solid blue;
   display: inline-block;
 }
 #myCanvas {
   background-color: rgba(0,0,0,0.5);
-  cursor: url(crosshairs.png) 65 65, auto;
-  border: 2px solid blue;
+  cursor: url(../Assets/crosshairs.png) 65 65, auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 #titleDiv {
@@ -46,7 +45,6 @@ body {
   font-size: 20px;
   color: yellow;
   background-color: rgba(0,0,0,0.5);
-  border: 2px solid blue;
   display: inline-block;
 }
 
@@ -59,8 +57,6 @@ body {
   background-color: rgba(0,0,0,0.5);
   font-size: 30px;
   color: yellow;
-  border: 2px solid blue;
-
 }
 
 #score {
@@ -69,7 +65,6 @@ body {
   display: inline-block;
   color: yellow;
   font-size: 20px;
-  border: 2px solid blue;
   margin-right: 50px;
 }
 
@@ -80,7 +75,6 @@ body {
   display: inline-block;
   color: yellow;
   font-size: 20px;
-  border: 2px solid blue;
   margin-left: 50px;
 }
 
@@ -90,7 +84,6 @@ body {
   background-color: rgba(0,0,0,0.5);
   color: yellow;
   font-size: 20px;
-  border: 2px solid blue;
   display: inline-block;
   float: right;
   margin-top: 150px;
@@ -101,7 +94,6 @@ body {
 #startDiv {
   height: 60px;
   width: 105px;
-  border: 2px solid blue;
   display: inline-block;
   margin-top: 10px;
 }

@@ -1,4 +1,4 @@
-#KILLER SQUARE
+#KILLER SQUARE (TIE Fighter Defense)
 ###Wire Frame
 ![Killer Square](https://github.com/agonzalez27/Project1_KillerSquare/blob/master/ReadMe/KillerSquare2.png?raw=true "Killer Square")
 ###User Stories
@@ -12,9 +12,19 @@ If I can finish the minimum viable product by Wednesday 10/12, I will work on in
 If I have more time to make improvements, I will work on giving the TIE Fighter increasingly complex movement patterns across the board.     
   
 ###Technologies Used
-To render and style the game board, I will use HTML and CSS.  
+To render and style the game board, I will use HTML and CSS.
 
-To move the Killer Square, track score, and track level, I will use Javascript.  
+To move the Killer Square, track score, and track level, I will use Javascript, jQuery, and HTML Canvas.    
 ###Approach Taken
+I began by first creating a skeleton of what I ultimately really wanted to accomplish which was a Star Wars themed TIE Fighter game.  Once the skeleton was completed, I replaced the killer square with a TIE Fighter.  I replaced the body background with a star wars image.  Mike recommended that I add a high score board which tracked the score of every subsequent game.  Finally I added music.  
+
 ###Installation Instructions
+Visit https://github.com/agonzalez27/Project1_KillerSquare and download a zip file.  Unzip the file, save on your computer, and open the index.html file in your favorite browser (Chrome highly recommended).  
+
 ###Unsolved Problems
+I was able to create a starry background on canvas using three for loops.  Ideally, the stars would move during game play to simulate space flight.  
+
+I didn't quite ahve enough time to create lasers and and a shooting sound every time the mouse was clicked.  
+
+###Known Bugs
+There are currently no known bugs.  
