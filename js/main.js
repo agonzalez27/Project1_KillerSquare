@@ -57,7 +57,7 @@ function updateAll() {
   if(squareY > 450) {
     clearInterval(interval);
     titleDiv.html("GAME OVER");
-    startDiv.html('<div id="startDiv"><button id="RESTART">RESTART</button><div>');
+    startDiv.html('<button id="RESTART">RESTART</button>');
     $('#RESTART').on("click", restartGame);
     highScore.push(score);
     var j = highScore.length - 1;
