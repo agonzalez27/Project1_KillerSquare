@@ -17,6 +17,9 @@ var startDiv = $("#startDiv");
 var highScoreDiv = $("#highScoreDiv");
 var highScore = [0];
 var interval;
+var audioIntro = new Audio("./Assets/MainStarWars.mp3")
+audioIntro.play();
+var audioPlay = new Audio("./Assets/ImperialAttack.mp3")
 
 //this is the event listner for the shooting clicks on the page
 canvas.on("click", function(e) {
@@ -42,6 +45,8 @@ canvas.on("click", function(e) {
 function startGame() {
     interval = setInterval(updateAll, 30);
     $("#start").off();
+    audioIntro.pause();
+    audioPlay.play();
 }
 
 //calls functions that draw various elements and ends game when TIE figher hits the botom of the page
