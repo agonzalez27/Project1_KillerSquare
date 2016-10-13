@@ -26,27 +26,23 @@ canvas.on("click", function(e) {
   clickX = e.pageX - canvas[0].offsetLeft
   clickY = e.pageY - canvas[0].offsetTop
   if(clickX >= squareX && clickX <= squareX+100 && clickY >= squareY && clickY <= squareY+100) {
-    console.log("You scored 50 points");
     score = score + 50;
-    console.log(score);
     $("#score").html("Score: " + score);
     level = level +1;
     $("#level").html("Level: " + level);
-    console.log(level)
     squareX = randomNumber();
     squareY = 0;
     squareXspeed = squareXspeed *1.5;
     squareYspeed = squareYspeed *1.2;
   }
-  whatIsSquareY();
 })
 
 //creates animation by updating canvas 30 times a second.
 function startGame() {
-    interval = setInterval(updateAll, 30);
-    $("#start").off();
-    audioIntro.pause();
-    audioPlay.play();
+  interval = setInterval(updateAll, 30);
+  $("#start").off();
+  audioIntro.pause();
+  audioPlay.play();
 }
 
 //calls functions that draw various elements and ends game when TIE figher hits the botom of the page
@@ -129,7 +125,7 @@ function drawStars() {
 
 //prints high score in to high score div
 function highScore1(j) {
-    return $('#highScoreUl').append("<li>Game: " + j + "  " + "Level: " + level + "  " + "Score: " + highScore[j] + "</li>");
+  return $('#highScoreUl').append("<li>Game: " + j + "  " + "Level: " + level + "  " + "Score: " + highScore[j] + "</li>");
 }
 
 function restartGame() {
@@ -142,8 +138,4 @@ function restartGame() {
   titleDiv.html('<img id="titleDivTitle" src="Assets/tFighterD.png">');
   $('#RESTART').off();
   startGame();
-}
-
-function whatIsSquareY() {
-  console.log("this is squareY Y " + squareY);
 }
