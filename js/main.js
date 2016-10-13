@@ -139,7 +139,7 @@ function restartGame() {
   squareX = randomNumber();
   squareXspeed = 3;
   squareYspeed = 1;
-  titleDiv.html('<img id="titleDivTitle" src="css/tFighterD.png">');
+  titleDiv.html('<img id="titleDivTitle" src="Assets/tFighterD.png">');
   $('#RESTART').off();
   startGame();
 }
