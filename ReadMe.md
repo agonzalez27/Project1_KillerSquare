@@ -29,3 +29,6 @@ I didn't quite have enough time to create lasers and and a shooting sound every 
 
 ###Known Bugs
 There are currently no known bugs.  
+
+###Future Goals
+I want to simulate space flight.  Perhaps I can layer two canvasses on top of one another.  I could also perhaps attach event listeners to the stars which will help me move them from side to side and up and down.  
